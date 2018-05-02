@@ -29,7 +29,6 @@ export class AppComponent {
   ];
 
 //Finding what was selected
-
   getSelectOption(x) {
     switch (x) {
       case '1.) Best Time' : {
@@ -48,13 +47,12 @@ export class AppComponent {
         this.scales[4].select = false;
         break;
       }
-    })
+    }
   }
 
   //Rember what was selected.
-
-  recurringSelections1(x) {
-    switch(x) {
+  recurringSelections1(y) {
+    switch(y) {
       case '1.) Best Time' : {
         this.getSelectOption(this.firstSelection);
         this.scales[1].select = !this.scales[1].select;
@@ -62,67 +60,36 @@ export class AppComponent {
         break;
       }
       case '2.) Next Best Time' : {
-        this.getSelectOption(this.secondSelection);
+        this.getSelectOption(this.firstSelection);
         this.scales[2].select = !this.scales[2].select;
-        this.secondSelectiontSelection = '2.) Next Best Time';
+        this.firstSelection = '2.) Next Best Time';
         break;
       }
       case '3.) Not As Good' : {
-        this.getSelectOption(this.thirdSelection);
+        this.getSelectOption(this.firstSelection);
         this.scales[3].select = !this.scales[3].select;
-        this.thirdSelection = '3.) Not As Good';
+        this.firstSelection = '3.) Not As Good';
         break;
       }
       case '4.) Worst Time' : {
-        this.getSelectOption(this.fourthSelection);
+        this.getSelectOption(this.firstSelection);
         this.scales[4].select = !this.scales[4].select;
-        this.fourthSelection = '4.) Worst Time';
+        this.firstSelection = '4.) Worst Time';
         break;
       }
-      Default: {
-        this.getSelectOption(this.firstSelection)
+      default: {
+        this.getSelectOption(this.firstSelection);
+        break;
       }
     }
   }
 
-  recurringSelections2(x) {
-    switch(x) {
+  recurringSelections2(y) {
+    switch(y) {
       case '1.) Best Time' : {
-        this.getSelectOption(this.firstSelection);
-        this.scales[1].select = !this.scales[1].select;
-        this.firstSelection = '1.) Best Time';
-        break;
-      }
-      case '2.) Next Best Time' : {
         this.getSelectOption(this.secondSelection);
-        this.scales[2].select = !this.scales[2].select;
-        this.secondSelection = '2.) Next Best Time';
-        break;
-      }
-      case '3.) Not As Good' : {
-        this.getSelectOption(this.thirdSelection);
-        this.scales[3].select = !this.scales[3].select;
-        this.thirdSelection = '3.) Not As Good';
-        break;
-      }
-      case '4.) Worst Time' : {
-        this.getSelectOption(this.fourthSelection);
-        this.scales[4].select = !this.scales[4].select;
-        this.fourthSelection = '4.) Worst Time';
-        break;
-      }
-      Default: {
-        this.getSelectOption(this.firstSelection)
-      }
-    }
-  }
-
-  recurringSelections3(x) {
-    switch(x) {
-      case '1.) Best Time' : {
-        this.getSelectOption(this.firstSelection);
         this.scales[1].select = !this.scales[1].select;
-        this.firstSelection = '1.) Best Time';
+        this.secondSelection = '1.) Best Time';
         break;
       }
       case '2.) Next Best Time' : {
@@ -132,35 +99,36 @@ export class AppComponent {
         break;
       }
       case '3.) Not As Good' : {
-        this.getSelectOption(this.thirdSelection);
+        this.getSelectOption(this.secondSelection);
         this.scales[3].select = !this.scales[3].select;
-        this.thirdSelection = '3.) Not As Good';
+        this.secondSelection = '3.) Not As Good';
         break;
       }
       case '4.) Worst Time' : {
-        this.getSelectOption(this.fourthSelection);
+        this.getSelectOption(this.secondSelection);
         this.scales[4].select = !this.scales[4].select;
-        this.fourthSelection = '4.) Worst Time';
+        this.secondSelection = '4.) Worst Time';
         break;
       }
-      Default: {
-        this.getSelectOption(this.firstSelection)
+      default: {
+        this.getSelectOption(this.secondSelection);
+        break;
       }
     }
   }
 
-  recurringSelections4(x) {
-    switch(x) {
+  recurringSelections3(y) {
+    switch(y) {
       case '1.) Best Time' : {
-        this.getSelectOption(this.firstSelection);
+        this.getSelectOption(this.thirdSelection);
         this.scales[1].select = !this.scales[1].select;
-        this.firstSelection = '1.) Best Time';
+        this.thirdSelection = '1.) Best Time';
         break;
       }
       case '2.) Next Best Time' : {
-        this.getSelectOption(this.secondSelection);
+        this.getSelectOption(this.thirdSelection);
         this.scales[2].select = !this.scales[2].select;
-        this.secondSelection = '2.) Next Best Time';
+        this.thirdSelection = '2.) Next Best Time';
         break;
       }
       case '3.) Not As Good' : {
@@ -170,18 +138,52 @@ export class AppComponent {
         break;
       }
       case '4.) Worst Time' : {
+        this.getSelectOption(this.thirdSelection);
+        this.scales[4].select = !this.scales[4].select;
+        this.thirdSelection = '4.) Worst Time';
+        break;
+      }
+      default: {
+        this.getSelectOption(this.thirdSelection);
+        break;
+      }
+    }
+  }
+
+  recurringSelections4(y) {
+    switch(y) {
+      case '1.) Best Time' : {
+        this.getSelectOption(this.fourthSelection);
+        this.scales[1].select = !this.scales[1].select;
+        this.fourthSelection = '1.) Best Time';
+        break;
+      }
+      case '2.) Next Best Time' : {
+        this.getSelectOption(this.fourthSelection);
+        this.scales[2].select = !this.scales[2].select;
+        this.fourthSelection = '2.) Next Best Time';
+        break;
+      }
+      case '3.) Not As Good' : {
+        this.getSelectOption(this.fourthSelection);
+        this.scales[3].select = !this.scales[3].select;
+        this.fourthSelection = '3.) Not As Good';
+        break;
+      }
+      case '4.) Worst Time' : {
         this.getSelectOption(this.fourthSelection);
         this.scales[4].select = !this.scales[4].select;
         this.fourthSelection = '4.) Worst Time';
         break;
       }
-      Default: {
-        this.getSelectOption(this.firstSelection)
+      default: {
+        this.getSelectOption(this.fourthSelection);
+        break;
       }
     }
   }
 
-  // Reset Page to Default
+  // Reset Page to default
   fixPageByReset(){
     this.option1 = 'Select One';
     this.option2 = 'Select One';
